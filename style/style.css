@@ -238,7 +238,7 @@ li a {
 }
 .fa.fa-pencil-square-o{
   position: absolute;
-  margin-top: 0.26%;
+  margin-top: 0.4%;
   margin-left: 0.2%;
 }
 /*Delete button in modal*/
@@ -258,6 +258,6 @@ li a {
 }
 .fa.fa-trash-o{
   position: absolute;
-  margin-top: 0.2%;
+  margin-top: 0.35%;
   margin-left: 0.2%;
 }

@@ -121,7 +121,7 @@ if (document.URL.includes("index.html")) {
           <h2>Details van ${person.Firstname} ${person.Lastname}</h2>
           <p>ID: ${person.Id}</p>
           <p>Volledige naam: ${person.Firstname} ${person.Infix} ${person.Lastname}</p>
-          <p>Woonplaats & Postcode: ${person.StadDorp}, ${person.PostalCode}</p>
+          <p>Woonplaats & Postcode: ${person.City}, ${person.PostalCode}</p>
           <p>Straat en Straatnummer: ${person.StreetAndStreetNumber}</p>
           <button id="EditButtonInModal" class="edit-button-modal">Personeels gegevens aanpassen<i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
           <button id="DeleteButtonInModal" class="delete-button-modal">Persoon verwijderen<i class="fa fa-trash-o" aria-hidden="true"></i></button>
