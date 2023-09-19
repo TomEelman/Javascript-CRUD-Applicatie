@@ -146,18 +146,6 @@ li a {
 }
 
 /* icons */
-/*EditIcon*/
-.fa.fa-pencil {
-  color: #007bff;
-  font-size: 24px;
-  margin-right: -10.5%;
-  margin-top: 33%;
-  float: right;
-  cursor: pointer;
-}
-.fa.fa-pencil:hover {
-  color: #3c95f4;
-}
 /*MoreInfoIcon*/
 .fa.fa-info {
   float: right;
@@ -169,6 +157,18 @@ li a {
 }
 .fa.fa-info:hover {
   color: #858585;
+}
+/*EditIcon*/
+.fa.fa-pencil {
+  color: #007bff;
+  font-size: 24px;
+  margin-right: -10.5%;
+  margin-top: 33%;
+  float: right;
+  cursor: pointer;
+}
+.fa.fa-pencil:hover {
+  color: #3c95f4;
 }
 /*TrashIcon*/
 .fa.fa-trash {
@@ -220,4 +220,44 @@ li a {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+/*Edit button in modal*/
+.edit-button-modal{
+  border: none;
+  color: #007bff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.edit-button-modal:hover{
+  color: #3c95f4;
+}
+.fa.fa-pencil-square-o{
+  position: absolute;
+  margin-top: 0.26%;
+  margin-left: 0.2%;
+}
+/*Delete button in modal*/
+.delete-button-modal{
+  border: none;
+  color: #ff0000;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.delete-button-modal:hover{
+  color: #fb5d5d;
+}
+.fa.fa-trash-o{
+  position: absolute;
+  margin-top: 0.2%;
+  margin-left: 0.2%;
 }

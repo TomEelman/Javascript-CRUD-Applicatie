@@ -10,7 +10,7 @@ if (document.URL.includes("create.html")) {
     const cityInput = document.getElementById('city');
     const streetandstreetnumberInput = document.getElementById('streetandstreetnumber');
     const postalcodeInput = document.getElementById('postalcode');
-  
+
     // Check to see if input is empty
     if (
       !firstnameInput.value ||
@@ -23,7 +23,7 @@ if (document.URL.includes("create.html")) {
       alert('Vul alle velden met een * in');
       return;
     }
-  
+
     //Fill the object if all input fields are filled
     let userdata = {
       Id: Date.now(),
@@ -34,13 +34,13 @@ if (document.URL.includes("create.html")) {
       StreetAndStreetNumber: streetandstreetnumberInput.value,
       PostalCode: postalcodeInput.value,
     }
-  
+
     // Push to local storage and redirect
     userData.push(userdata);
     localStorage.setItem('personnel', JSON.stringify(userData));
     location.replace('index.html');
   }
-  
+
   //Edit User
   //Look in the Local storage key "editPerson"
   const editPersonData = localStorage.getItem("editPerson");
@@ -123,10 +123,44 @@ if (document.URL.includes("index.html")) {
           <p>Volledige naam: ${person.Firstname} ${person.Infix} ${person.Lastname}</p>
           <p>Woonplaats & Postcode: ${person.StadDorp}, ${person.PostalCode}</p>
           <p>Straat en Straatnummer: ${person.StreetAndStreetNumber}</p>
+          <button id="EditButtonInModal" class="edit-button-modal">Personeels gegevens aanpassen<i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+          <button id="DeleteButtonInModal" class="delete-button-modal">Persoon verwijderen<i class="fa fa-trash-o" aria-hidden="true"></i></button>
         </div>
       </div>
     `;
     document.body.appendChild(modal);
+
+    // Get info out of local storage
+    var personnelData = localStorage.getItem("personnel");
+
+    // parse
+    var personnelObject = JSON.parse(personnelData);
+
+    //Loop 
+    for (var i = 0; i < personnelObject.length; i++) {
+
+      // Edit Function For button in modal 
+      var EditButtonInModal = document.getElementById("EditButtonInModal");
+      EditButtonInModal.addEventListener("click", (function (editperson) {
+        return function () {
+          Edit(editperson);
+        };
+      })
+        (personnelObject[i])
+      );
+
+      // Delete Function For button in modal 
+      var DeleteButtonInModal = document.getElementById("DeleteButtonInModal");
+      DeleteButtonInModal.addEventListener("click", (function (deleteperson) {
+        return function () {
+          Delete(deleteperson);
+          location.reload();
+        };
+      })
+        (personnelObject[i])
+      );
+
+    }
   }
 
   // Function to close modal with the x
