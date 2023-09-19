@@ -221,7 +221,7 @@ if (document.URL.includes("index.html")) {
     var personnelObject = JSON.parse(personnelData);
 
     // Where all the information is being displayed
-    var personnelList = document.getElementById("first-lastname");
+    var personnelList = document.getElementById("first-lastnameList");
 
     for (var i = 0; i < personnelObject.length; i++) {
       var Id = personnelObject[i].Id;

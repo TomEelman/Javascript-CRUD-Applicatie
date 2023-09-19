@@ -234,7 +234,7 @@ li a {
   cursor: pointer;
 }
 .edit-button-modal:hover{
-  color: #3c95f4;
+  color: #5baaff;
 }
 .fa.fa-pencil-square-o{
   position: absolute;
@@ -254,10 +254,10 @@ li a {
   cursor: pointer;
 }
 .delete-button-modal:hover{
-  color: #fb5d5d;
+  color: #fe6b6b;
 }
 .fa.fa-trash-o{
-  position: absolute;
+  position: fixed;
   margin-top: 0.35%;
   margin-left: 0.2%;
 }
