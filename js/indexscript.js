@@ -158,6 +158,7 @@ if (document.URL.includes("index.html")) {
       // Delete Function For button in modal 
       var deleteButtonInModal = document.getElementById("DeleteButtonInModal");
       deleteButtonInModal.onclick = () => Delete(person);
+      
     }
   }
 
