@@ -85,7 +85,6 @@ if (document.URL.includes("create.html")) {
 }
 
 function Edit(person) {
-  // Takes the info you want to change
   let personnelData = JSON.parse(localStorage.getItem("personnel")) || [];
 
   const editIndex = personnelData.findIndex((element) => element.Id === person.Id);
@@ -106,6 +105,7 @@ function Edit(person) {
     location.replace("index.html");
   }
 }
+
 if (document.URL.includes("index.html")) {
   function showModal(person) {
 
@@ -136,30 +136,20 @@ if (document.URL.includes("index.html")) {
     // parse
     var personnelObject = JSON.parse(personnelData);
 
+    var list = personnelObject.findIndex(function (element) {
+      return element.Id === person.Id;
+    });
+
     //Loop 
     for (var i = 0; i < personnelObject.length; i++) {
 
       // Edit Function For button in modal 
       var EditButtonInModal = document.getElementById("EditButtonInModal");
-      EditButtonInModal.addEventListener("click", (function (editperson) {
-        return function () {
-          Edit(editperson);
-        };
-      })
-        (personnelObject[i])
-      );
+      EditButtonInModal.onclick = () => Edit(person);
 
       // Delete Function For button in modal 
-      var DeleteButtonInModal = document.getElementById("DeleteButtonInModal");
-      DeleteButtonInModal.addEventListener("click", (function (deleteperson) {
-        return function () {
-          Delete(deleteperson);
-          location.reload();
-        };
-      })
-        (personnelObject[i])
-      );
-
+      var deleteButtonInModal = document.getElementById("DeleteButtonInModal");
+      deleteButtonInModal.onclick = () => Delete(person);
     }
   }
 
@@ -188,7 +178,6 @@ if (document.URL.includes("index.html")) {
     if (list !== -1) {
       // Deletes user from the Object
       personnelObject.splice(list, 1);
-
       // Update the local storage
       localStorage.setItem("personnel", JSON.stringify(personnelObject));
 
@@ -196,6 +185,7 @@ if (document.URL.includes("index.html")) {
       var personDiv = document.getElementById("person_" + person.Id);
       if (personDiv) {
         personDiv.remove();
+        location.reload();
       }
     }
   }
@@ -223,63 +213,68 @@ if (document.URL.includes("index.html")) {
     // Where all the information is being displayed
     var personnelList = document.getElementById("first-lastnameList");
 
-    for (var i = 0; i < personnelObject.length; i++) {
-      var Id = personnelObject[i].Id;
-      var firstname = personnelObject[i].Firstname;
-      var lastname = personnelObject[i].Lastname;
-      var infix = personnelObject[i].Infix;
+    if (personnelObject.length === 0) {
+      document.getElementById("no-users-message").innerHTML = ("Geen gebruikers gevonden");
+    } else {
 
-      // Make a block for every added person
-      var personDiv = document.createElement("ul");
-      personDiv.id = "person_" + Id;
-      personDiv.className = "person_block";
+      for (var i = 0; i < personnelObject.length; i++) {
+        var Id = personnelObject[i].Id;
+        var firstname = personnelObject[i].Firstname;
+        var lastname = personnelObject[i].Lastname;
+        var infix = personnelObject[i].Infix;
 
-      //Trash icon / Delete Function
-      var trashIcon = document.createElement("i");
-      trashIcon.className = "fa fa-trash";
-      trashIcon.addEventListener("click", (function (deleteperson) {
-        return function () {
-          Delete(deleteperson);
-        };
-      })
-        (personnelObject[i])
-      );
+        // Make a block for every added person
+        var personDiv = document.createElement("ul");
+        personDiv.id = "person_" + Id;
+        personDiv.className = "person_block";
 
-      //Pencil icon / Edit Function
-      var potloodIcon = document.createElement("i");
-      potloodIcon.className = "fa fa-pencil";
-      potloodIcon.addEventListener("click", (function (editperson) {
-        return function () {
-          Edit(editperson);
-        };
-      })
-        (personnelObject[i])
-      );
+        //Trash icon / Delete Function
+        var trashIcon = document.createElement("i");
+        trashIcon.className = "fa fa-trash";
+        trashIcon.addEventListener("click", (function (deleteperson) {
+          return function () {
+            Delete(deleteperson);
+          };
+        })
+          (personnelObject[i])
+        );
 
-      //More information icon / More information Function
-      var infoIcon = document.createElement("i");
-      infoIcon.className = "fa fa-info";
-      infoIcon.addEventListener("click", (function (person) {
-        return function () {
-          showModal(person);
-        };
-      })
-        (personnelObject[i])
-      );
+        //Pencil icon / Edit Function
+        var potloodIcon = document.createElement("i");
+        potloodIcon.className = "fa fa-pencil";
+        potloodIcon.addEventListener("click", (function (editperson) {
+          return function () {
+            Edit(editperson);
+          };
+        })
+          (personnelObject[i])
+        );
 
-      var firstnameElement = document.createElement("p");
-      firstnameElement.textContent = "Naam: " + firstname + " " + infix + " " + lastname;
+        //More information icon / More information Function
+        var infoIcon = document.createElement("i");
+        infoIcon.className = "fa fa-info";
+        infoIcon.addEventListener("click", (function (person) {
+          return function () {
+            showModal(person);
+          };
+        })
+          (personnelObject[i])
+        );
 
-      var idElement = document.createElement("p");
-      idElement.textContent = "ID:" + Id;
+        var firstnameElement = document.createElement("p");
+        firstnameElement.textContent = "Naam: " + firstname + " " + infix + " " + lastname;
 
-      // icons
-      personDiv.appendChild(trashIcon);
-      personDiv.appendChild(potloodIcon);
-      personDiv.appendChild(infoIcon);
-      personDiv.appendChild(firstnameElement);
-      personDiv.appendChild(idElement);
-      personnelList.appendChild(personDiv);
+        var idElement = document.createElement("p");
+        idElement.textContent = "ID:" + Id;
+
+        // icons
+        personDiv.appendChild(trashIcon);
+        personDiv.appendChild(potloodIcon);
+        personDiv.appendChild(infoIcon);
+        personDiv.appendChild(firstnameElement);
+        personDiv.appendChild(idElement);
+        personnelList.appendChild(personDiv);
+      }
     }
   }
 }
