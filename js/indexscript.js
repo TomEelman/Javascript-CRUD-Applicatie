@@ -8,16 +8,19 @@ if (document.URL.includes("create.html")) {
     const infixInput = document.getElementById('infix');
     const lastnameInput = document.getElementById('lastname');
     const cityInput = document.getElementById('city');
-    const streetandstreetnumberInput = document.getElementById('streetandstreetnumber');
     const postalcodeInput = document.getElementById('postalcode');
+    const streetInput = document.getElementById('street');
+    const streetnumberInput = document.getElementById('streetnumber');
+    const additiveInput = document.getElementById('additive');
 
     // Check to see if input is empty
     if (
       !firstnameInput.value ||
       !lastnameInput.value ||
       !cityInput.value ||
-      !streetandstreetnumberInput.value ||
-      !postalcodeInput.value
+      !postalcodeInput.value ||
+      !streetInput.value ||
+      !streetnumberInput.value
     ) {
       // If it is empty give this error message
       alert('Vul alle velden met een * in');
@@ -31,8 +34,10 @@ if (document.URL.includes("create.html")) {
       Infix: infixInput.value,
       Lastname: lastnameInput.value,
       City: cityInput.value,
-      StreetAndStreetNumber: streetandstreetnumberInput.value,
       PostalCode: postalcodeInput.value,
+      Street: streetInput.value,
+      Streetnumber: streetnumberInput.value,
+      Additive: additiveInput.value,
     }
 
     // Push to local storage and redirect
@@ -53,8 +58,10 @@ if (document.URL.includes("create.html")) {
     document.getElementById("infix").value = editPerson.Infix;
     document.getElementById("lastname").value = editPerson.Lastname;
     document.getElementById("city").value = editPerson.City;
-    document.getElementById("streetandstreetnumber").value = editPerson.StreetAndStreetNumber;
     document.getElementById("postalcode").value = editPerson.PostalCode;
+    document.getElementById("street").value = editPerson.Street;
+    document.getElementById("streetnumber").value = editPerson.Streetnumber;
+    document.getElementById("additive").value = editPerson.Additive;
   }
 
   // Set the checklist image based on edit or create mode
@@ -95,9 +102,10 @@ function Edit(person) {
     personnelData[editIndex].Infix = document.getElementById('infix').value;
     personnelData[editIndex].Lastname = document.getElementById('lastname').value;
     personnelData[editIndex].City = document.getElementById('city').value;
-    personnelData[editIndex].StreetAndStreetNumber = document.getElementById('streetandstreetnumber').value;
     personnelData[editIndex].PostalCode = document.getElementById('postalcode').value;
-
+    personnelData[editIndex].Street = document.getElementById('street').value;
+    personnelData[editIndex].Streetnumber = document.getElementById('streetnumber').value;
+    personnelData[editIndex].Additive = document.getElementById('additive').value;
     // Local storage update
     localStorage.setItem("personnel", JSON.stringify(personnelData));
 
@@ -122,7 +130,7 @@ if (document.URL.includes("index.html")) {
           <p>ID: ${person.Id}</p>
           <p>Volledige naam: ${person.Firstname} ${person.Infix} ${person.Lastname}</p>
           <p>Woonplaats & Postcode: ${person.City}, ${person.PostalCode}</p>
-          <p>Straat en Straatnummer: ${person.StreetAndStreetNumber}</p>
+          <p>Straat en Straatnummer: ${person.Street}, ${person.Streetnumber}${person.Additive}</p>
           <button id="EditButtonInModal" class="edit-button-modal">Personeels gegevens aanpassen<i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
           <button id="DeleteButtonInModal" class="delete-button-modal">Persoon verwijderen<i class="fa fa-trash-o" aria-hidden="true"></i></button>
         </div>

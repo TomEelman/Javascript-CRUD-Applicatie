@@ -105,6 +105,30 @@ li a {
   border-radius: 4px;
   box-sizing: border-box;
 }
+.input-street{
+  width: 24.7%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.input-streetnumber{
+  width: 12.35%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.input-additive{
+  width: 12.35%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 .input {
   width: 50%;
   padding: 12px 20px;
@@ -114,8 +138,22 @@ li a {
   border-radius: 4px;
   box-sizing: border-box;
 }
+.input-label-street{
+  float: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 19.8%;
+}
+.input-label-streetnumber{
+  position: absolute;
+}
+.input-label-additive{
+  margin-left: 6.65%;
+}
+
 /*Submit button*/
 .Submit-button {
+  position: absolute;
   width: 135px;
   height: 60px;
   border: none;
@@ -130,8 +168,7 @@ li a {
   overflow: hidden;
   cursor: pointer;
   margin-left: 21.5%;
-  margin-top: 0.5%;
-}
+  float: left;}
 .Submit-button:hover {
   color: #ededed;
   background-color: #000000;
