@@ -35,15 +35,21 @@ float: right;
 margin-top: 7px;
 padding-left: 15px;
 }
+
 /*The blocks of the personnel*/
 .horizontal-list {
   float: left;
   margin-top: 1%;
-  width: 65%;
+  width: 50%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+}
+.no-users-message {
+  margin-top: 2%;
+  margin-right: 45%;
+  float: inline-end;
 }
 .person_block{
   height: auto;
@@ -61,13 +67,23 @@ padding-left: 15px;
   min-width: 200.609px;
   max-width: 431.610px;
 }
+.vertical-line {
+  opacity: 0.1;
+  border-left: 6px solid rgb(43, 46, 43);
+  margin-top: 12%;
+  height: 610px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+  border-radius: 5px;
+}
 
-
+/*Input fields*/
 .form-personnel {
-  margin-left: 5%;
+  float: right;
   margin-top: 1%;
 }
-/*Input fields*/
 .input {
   width: 70%;
   padding: 12px 20px;
@@ -130,7 +146,6 @@ padding-left: 15px;
 .input-label-additive{
   margin-left: 6.65%;
 }
-
 /*Submit button*/
 .Submit-button {
   position: absolute;
