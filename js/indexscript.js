@@ -11,6 +11,9 @@ const userForm = document.getElementById('userForm');
 const CreatePersonModal = document.getElementById('CreatePersonModal');
 const submitButtonCreate = document.getElementById('submitButtonCreate');
 const submitButtonEdit = document.getElementById('submitButtonEdit');
+const create_txt = document.getElementById('create-txt');
+const edit_txt = document.getElementById('edit-txt');
+const arrow_backtocreate = document.getElementById('arrow-backtocreate');
 
 init()
 function init() {
@@ -31,12 +34,20 @@ function showEditUserForm(ev) {
   const userIndex = users.findIndex((users) => users.Id == userId);
   if (userForm) {
     userForm.style.display = "block";
+    edit_txt.style.display = "block";
     submitButtonCreate.style.display = "none";
     fillUserForm(users[userIndex])
   }
   if (userId) {
+    arrow_backtocreate.style.display = "block";
     submitButtonEdit.style.display = "block";
+    edit_txt.style.display = "block";
+    create_txt.style.display = "none";
   }
+}
+
+function arrowBackToCreate() {
+  location.reload()
 }
 
 function fillUserForm(user) {
@@ -49,6 +60,11 @@ function fillUserForm(user) {
   streetInput.value = user.Street;
   streetnumberInput.value = user.Streetnumber;
   additiveInput.value = user.Additive;
+}
+
+function clearUserList() {
+  localStorage.clear()
+  location.reload()
 }
 
 function validateUserData() {

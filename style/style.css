@@ -3,13 +3,16 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
 }
+
 h1 {
   text-align: center;
 }
+
 li {
   margin-top: 4px;
   float: left;
 }
+
 li a {
   display: block;
   color: rgb(255, 255, 255);
@@ -27,13 +30,14 @@ li a {
   background-color: #807ef5;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
 }
-.txt-addpersonnel{
-cursor: pointer;
-color: rgb(0, 0, 0);
-text-decoration: none;
-float: right;
-margin-top: 7px;
-padding-left: 15px;
+
+.txt-addpersonnel {
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  float: right;
+  margin-top: 7px;
+  padding-left: 15px;
 }
 
 /*The blocks of the personnel*/
@@ -46,12 +50,14 @@ padding-left: 15px;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
 .no-users-message {
-  margin-top: 2%;
-  margin-right: 45%;
-  float: inline-end;
+  float: left;
+  position: absolute;
+  margin-left: 11%;
 }
-.person_block{
+
+.person_block {
   height: auto;
   width: 11%;
   margin-top: 2.5%;
@@ -67,6 +73,7 @@ padding-left: 15px;
   min-width: 200.609px;
   max-width: 431.610px;
 }
+
 .vertical-line {
   opacity: 0.1;
   border-left: 6px solid rgb(43, 46, 43);
@@ -80,10 +87,27 @@ padding-left: 15px;
 }
 
 /*Input fields*/
+.edit-txt {
+  display: none;
+}
+
+.create-txt {
+  display: block;
+}
+
+.fa.fa-undo {
+  cursor: pointer;
+  float: left;
+  display: none;
+  font-size: xx-large;
+  margin-left: 4.3%;
+  margin-top: 6%;
+}
+
 .form-personnel {
   float: right;
-  margin-top: 1%;
 }
+
 .input {
   width: 70%;
   padding: 12px 20px;
@@ -93,8 +117,9 @@ padding-left: 15px;
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 .input-city {
-  width:35%;
+  width: 35%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -102,6 +127,7 @@ padding-left: 15px;
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 .input-postalcode {
   width: 35%;
   padding: 12px 20px;
@@ -110,7 +136,8 @@ padding-left: 15px;
   border-radius: 4px;
   box-sizing: border-box;
 }
-.input-street{
+
+.input-street {
   width: 35%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -118,7 +145,8 @@ padding-left: 15px;
   border-radius: 4px;
   box-sizing: border-box;
 }
-.input-streetnumber{
+
+.input-streetnumber {
   width: 17.5%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -126,7 +154,8 @@ padding-left: 15px;
   border-radius: 4px;
   box-sizing: border-box;
 }
-.input-additive{
+
+.input-additive {
   width: 17.5%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -134,18 +163,22 @@ padding-left: 15px;
   border-radius: 4px;
   box-sizing: border-box;
 }
-.input-label-street{
+
+.input-label-street {
   float: left;
   margin-top: 0;
   margin-bottom: 0;
-  margin-right: 12%;
+  margin-right: 22.5%;
 }
-.input-label-streetnumber{
+
+.input-label-streetnumber {
   position: absolute;
 }
-.input-label-additive{
-  margin-left: 6.65%;
+
+.input-label-additive {
+  margin-left: 18%;
 }
+
 /*Submit button*/
 .Submit-button {
   position: absolute;
@@ -165,10 +198,12 @@ padding-left: 15px;
   margin-left: 25%;
   float: left;
 }
+
 .Submit-button:hover {
   color: #ededed;
   background-color: #000000;
 }
+
 .checklist-img {
   float: right;
   height: auto;
@@ -188,9 +223,11 @@ padding-left: 15px;
   margin-top: 22%;
   cursor: pointer;
 }
+
 .fa.fa-info:hover {
   color: #858585;
 }
+
 /*EditIcon*/
 .fa.fa-pencil {
   color: #007bff;
@@ -200,9 +237,11 @@ padding-left: 15px;
   float: right;
   cursor: pointer;
 }
+
 .fa.fa-pencil:hover {
   color: #3c95f4;
 }
+
 /*TrashIcon*/
 .fa.fa-trash {
   float: right;
@@ -212,6 +251,7 @@ padding-left: 15px;
   margin-top: 45%;
   cursor: pointer;
 }
+
 .fa.fa-trash:hover {
   color: #fb5d5d;
 }
@@ -230,9 +270,11 @@ padding-left: 15px;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
 }
+
 .modal-visible {
   display: block;
 }
+
 /*Modal Content*/
 .modal {
   background-color: #fefefe;
@@ -241,6 +283,7 @@ padding-left: 15px;
   border: 1px solid #888;
   width: 80%;
 }
+
 /*Close Button*/
 .close {
   color: #aaaaaa;
@@ -248,14 +291,16 @@ padding-left: 15px;
   font-size: 28px;
   font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
 }
+
 /*Delete button in modal*/
-.delete-button-modal{
+.delete-button-modal {
   border: none;
   color: #ff0000;
   padding: 15px 32px;
@@ -266,10 +311,12 @@ padding-left: 15px;
   margin: 4px 2px;
   cursor: pointer;
 }
-.delete-button-modal:hover{
+
+.delete-button-modal:hover {
   color: #fe6b6b;
 }
-.fa.fa-trash-o{
+
+.fa.fa-trash-o {
   position: fixed;
   margin-top: 0.35%;
   margin-left: 0.2%;
