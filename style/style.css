@@ -2,7 +2,6 @@
 * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 h1 {
   text-align: center;
@@ -28,38 +27,19 @@ li a {
   background-color: #807ef5;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
 }
-.container-addButtons{
-  height: auto;
-  margin: 0;
-  padding: 0;
-  width: 50%;
-  height: 50px;
-  float: right;
-  margin-right: 2%;
-  margin-left: 10%;
-  margin-top: 0.20%;
-  margin-bottom: 0.20%;
+.txt-addpersonnel{
+cursor: pointer;
+color: rgb(0, 0, 0);
+text-decoration: none;
+float: right;
+margin-top: 7px;
+padding-left: 15px;
 }
-.img-plusAdd {
-  float: right; 
-  height: auto;
-  margin: 0;
-  padding: 0;
-  width: 9%;
-  height: 50px;
-  float: right;
-  margin-left: 11%;
-}
-.txt-personnelAdd {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  float: right;
-  margin-top: 7px;
-  padding: 0;
-}
-
 /*The blocks of the personnel*/
 .horizontal-list {
+  float: left;
+  margin-top: 1%;
+  width: 65%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -82,14 +62,23 @@ li a {
   max-width: 431.610px;
 }
 
-/*User form*/
+
 .form-personnel {
-  margin-left: 2%;
-  margin-top: 2%;
+  margin-left: 5%;
+  margin-top: 1%;
 }
 /*Input fields*/
+.input {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 .input-city {
-  width: 25%;
+  width:35%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -98,7 +87,7 @@ li a {
   box-sizing: border-box;
 }
 .input-postalcode {
-  width: 24.7%;
+  width: 35%;
   padding: 12px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
@@ -106,7 +95,7 @@ li a {
   box-sizing: border-box;
 }
 .input-street{
-  width: 24.7%;
+  width: 35%;
   padding: 12px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
@@ -114,7 +103,7 @@ li a {
   box-sizing: border-box;
 }
 .input-streetnumber{
-  width: 12.35%;
+  width: 17.5%;
   padding: 12px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
@@ -122,18 +111,9 @@ li a {
   box-sizing: border-box;
 }
 .input-additive{
-  width: 12.35%;
+  width: 17.5%;
   padding: 12px 20px;
   margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-.input {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -142,7 +122,7 @@ li a {
   float: left;
   margin-top: 0;
   margin-bottom: 0;
-  margin-right: 19.8%;
+  margin-right: 12%;
 }
 .input-label-streetnumber{
   position: absolute;
@@ -167,8 +147,9 @@ li a {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  margin-left: 21.5%;
-  float: left;}
+  margin-left: 25%;
+  float: left;
+}
 .Submit-button:hover {
   color: #ededed;
   background-color: #000000;
@@ -257,26 +238,6 @@ li a {
   color: #000;
   text-decoration: none;
   cursor: pointer;
-}
-/*Edit button in modal*/
-.edit-button-modal{
-  border: none;
-  color: #007bff;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.edit-button-modal:hover{
-  color: #5baaff;
-}
-.fa.fa-pencil-square-o{
-  position: absolute;
-  margin-top: 0.4%;
-  margin-left: 0.2%;
 }
 /*Delete button in modal*/
 .delete-button-modal{
