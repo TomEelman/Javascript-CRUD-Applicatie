@@ -62,8 +62,12 @@ function fillUserForm(user) {
 }
 
 function clearUserList() {
-  localStorage.clear()
-  location.reload()
+  if (confirm("Weet je het zeker dit zal alle gebruikers verwijderen!")) {
+    localStorage.clear()
+    location.reload()
+  } else {
+    location.reload()
+  }
 }
 
 function validateUserData() {
@@ -134,10 +138,13 @@ function deleteUser(userId) {
   const userData = getUsersFromLocalStorage();
   const deleteUserIndex = userData.findIndex((user) => user.Id == userId);
 
-  alert('WAARSCHUWING Weet je het zeker?')
-  userData.splice(deleteUserIndex, 1);
-  localStorage.setItem('personnel', JSON.stringify(userData));
-  location.reload()
+  if (confirm("Weet je het zeker dit zal deze gebruiker verwijderen!")) {
+    userData.splice(deleteUserIndex, 1);
+    localStorage.setItem('personnel', JSON.stringify(userData));
+    location.reload()
+  } else {
+    location.reload()
+  }
 }
 
 submitButtonCreate.addEventListener('click', function () {
