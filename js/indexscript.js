@@ -110,12 +110,11 @@ function addUser() {
 }
 
 function updateUser() {
-  closeModal();
-  if (validateUserData(true)) {
-    const editUserId = idInput.value;
-    const userData = getUsersFromLocalStorage();
-    const editUserIndex = userData.findIndex((user) => user.Id == editUserId);
+  const editUserId = idInput.value;
+  const userData = getUsersFromLocalStorage();
+  const editUserIndex = userData.findIndex((user) => user.Id == editUserId);
 
+  if (validateUserData(true)) {
     if (editUserIndex !== -1) {
       userData[editUserIndex] = {
         Id: editUserId,
