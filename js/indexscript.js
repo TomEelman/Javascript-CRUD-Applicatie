@@ -8,12 +8,11 @@ const streetInput = document.getElementById('street');
 const streetnumberInput = document.getElementById('streetnumber');
 const additiveInput = document.getElementById('additive');
 const userForm = document.getElementById('userForm');
-const CreatePersonModal = document.getElementById('CreatePersonModal');
 const submitButtonCreate = document.getElementById('submitButtonCreate');
 const submitButtonEdit = document.getElementById('submitButtonEdit');
+const arrow_backtocreate = document.getElementById('arrow-backtocreate');
 const create_txt = document.getElementById('create-txt');
 const edit_txt = document.getElementById('edit-txt');
-const arrow_backtocreate = document.getElementById('arrow-backtocreate');
 
 init()
 function init() {
