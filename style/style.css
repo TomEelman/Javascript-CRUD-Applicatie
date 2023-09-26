@@ -13,14 +13,6 @@ li {
   float: left;
 }
 
-li a {
-  display: block;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
 /*Navbar*/
 .navbar {
   list-style-type: none;
@@ -31,7 +23,7 @@ li a {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
 }
 
-.txt-addpersonnel {
+.txt-addPersonnel {
   cursor: pointer;
   color: rgb(0, 0, 0);
   text-decoration: none;
@@ -118,50 +110,24 @@ li a {
   box-sizing: border-box;
 }
 
-.input-city {
+.inputCity {
   width: 35%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
 }
 
-.input-postalcode {
+.inputPostalcode {
   width: 35%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
 }
 
-.input-street {
+.inputStreet {
   width: 35%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
 }
 
-.input-streetnumber {
+.inputStreetnumber {
   width: 17.5%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
 }
 
-.input-additive {
+.inputAdditive {
   width: 17.5%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
 }
 
 .input-label-street {

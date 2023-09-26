@@ -198,7 +198,6 @@ window.onclick = function (event) {
 function displayPersonnelData() {
 
   userList = getUsersFromLocalStorage()
-
   var personnelList = document.getElementById("first-lastnameList");
 
   if (userList.length === 0) {
@@ -240,7 +239,6 @@ function displayPersonnelData() {
       var trashIcon = document.createElement("i");
       trashIcon.className = "fa fa-trash";
       trashIcon.addEventListener("click", deleteUser);
-
 
       personDiv.appendChild(trashIcon);
       personDiv.appendChild(potloodIcon);
