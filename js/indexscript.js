@@ -21,6 +21,19 @@ function init() {
     userForm.style.display = "block";
     submitButtonEdit.style.display = "none";
   }
+
+  addEventListeners()
+}
+
+function addEventListeners() {
+
+  if(submitButtonCreate){
+    submitButtonCreate.addEventListener('click', addUser);
+  }
+
+  if(submitButtonEdit){
+    submitButtonEdit.addEventListener('click', updateUser);
+  }
 }
 
 function getUsersFromLocalStorage() {
@@ -146,14 +159,6 @@ function deleteUser(userId) {
   }
 }
 
-submitButtonCreate.addEventListener('click', function () {
-  addUser();
-});
-
-submitButtonEdit.addEventListener('click', function () {
-  updateUser()
-});
-
 function showModal(person) {
 
   const modal = document.createElement("div");
@@ -186,12 +191,6 @@ function closeModal() {
   const modals = document.querySelectorAll(".person-modal");
   for (const modal of modals) {
     modal.innerHTML = "";
-  }
-}
-
-window.onclick = function (event) {
-  if (event.target.classList.contains("modal-background")) {
-    closeModal();
   }
 }
 
@@ -247,5 +246,11 @@ function displayPersonnelData() {
       personDiv.appendChild(idElement);
       personnelList.appendChild(personDiv);
     }
+  }
+}
+
+window.onclick = function (event) {
+  if (event.target.classList.contains("modal-background")) {
+    closeModal();
   }
 }
